@@ -1,14 +1,13 @@
-import 'package:ecommerce_app/core/resources/assets_manager.dart';
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/font_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
-import 'package:ecommerce_app/core/resources/values_manager.dart';
+import 'package:ecommerce_app/core/components/main_text_field.dart';
+import 'package:ecommerce_app/core/components/validators.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/font_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../core/widget/main_text_field.dart';
-import '../../../../core/widget/validators.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});

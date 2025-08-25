@@ -1,22 +1,22 @@
-import 'package:ecommerce_app/core/resources/assets_manager.dart';
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/font_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
-import 'package:ecommerce_app/core/resources/values_manager.dart';
-import 'package:ecommerce_app/core/routes_manager/routes.dart';
+import 'package:ecommerce_app/config/routes_manager/routes.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/font_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
- final bool? automaticallyImplyLeading;
+  final bool? automaticallyImplyLeading;
   const HomeScreenAppBar({super.key, this.automaticallyImplyLeading});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       surfaceTintColor: Colors.white,
-      automaticallyImplyLeading: automaticallyImplyLeading??false,
+      automaticallyImplyLeading: automaticallyImplyLeading ?? false,
       title: SvgPicture.asset(
         SvgAssets.routeLogo,
         height: 25.h,

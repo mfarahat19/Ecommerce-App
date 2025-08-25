@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/values_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:ecommerce_app/features/main_layout/categories/presentation/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 

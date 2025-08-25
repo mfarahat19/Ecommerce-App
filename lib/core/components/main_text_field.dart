@@ -1,12 +1,12 @@
-import 'package:ecommerce_app/core/resources/assets_manager.dart';
-import 'package:ecommerce_app/core/resources/font_manager.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/font_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../resources/color_manager.dart';
-import '../resources/styles_manager.dart';
-import '../resources/values_manager.dart';
+import '../utils/styles_manager.dart';
 
 class BuildTextField extends StatefulWidget {
   const BuildTextField({
@@ -27,7 +27,9 @@ class BuildTextField extends StatefulWidget {
     this.validation,
     this.onTap,
     this.maxLines,
-    this.prefixIcon, this.borderBackgroundColor, this.suffixIcon,
+    this.prefixIcon,
+    this.borderBackgroundColor,
+    this.suffixIcon,
   });
 
   final TextEditingController? controller;
@@ -65,8 +67,7 @@ class _BuildTextFieldState extends State<BuildTextField> {
       children: [
         widget.label != null
             ? Padding(
-                padding: const EdgeInsets.only(
-                     top: AppPadding.p2),
+                padding: const EdgeInsets.only(top: AppPadding.p2),
                 child: Text(
                   widget.label!,
                   style: widget.labelTextStyle ??
@@ -78,11 +79,12 @@ class _BuildTextFieldState extends State<BuildTextField> {
         Container(
           margin: const EdgeInsets.only(top: AppMargin.m5),
           decoration: BoxDecoration(
-            color: widget.backgroundColor ??
-                ColorManager.darkGrey.withOpacity(.15),
-            borderRadius: BorderRadius.circular(AppSize.s8),
-            border: Border.all(color: widget.borderBackgroundColor ?? ColorManager.transparent )
-          ),
+              color: widget.backgroundColor ??
+                  ColorManager.darkGrey.withOpacity(.15),
+              borderRadius: BorderRadius.circular(AppSize.s8),
+              border: Border.all(
+                  color: widget.borderBackgroundColor ??
+                      ColorManager.transparent)),
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: TextFormField(
             maxLines: widget.maxLines ?? 1,

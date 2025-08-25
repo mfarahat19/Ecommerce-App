@@ -1,7 +1,7 @@
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/font_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
-import 'package:ecommerce_app/core/resources/values_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/font_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -21,7 +21,7 @@ class CategoryItem extends StatelessWidget {
       onTap: () => onItemClick(index),
       child: Container(
         // Set background color based on selection
-        color: isSelected?ColorManager.white:Colors.transparent,
+        color: isSelected ? ColorManager.white : Colors.transparent,
         padding: const EdgeInsets.all(AppPadding.p8),
         child: Row(
           children: [

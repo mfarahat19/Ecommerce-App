@@ -1,11 +1,12 @@
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
-import 'package:ecommerce_app/core/resources/values_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({required this.onPressed, required this.text, super.key});
+  const AddToCartButton(
+      {required this.onPressed, required this.text, super.key});
 
   final void Function()? onPressed;
   final String text;

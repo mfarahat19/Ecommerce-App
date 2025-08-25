@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/core/resources/assets_manager.dart';
-import 'package:ecommerce_app/core/resources/color_manager.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
 import 'package:flutter/material.dart';
 
 class HeartButton extends StatefulWidget {
@@ -37,7 +37,6 @@ class _HeartButtonState extends State<HeartButton> {
         child: Padding(
             padding: const EdgeInsets.all(6),
             child: ImageIcon(
-              
               AssetImage(heartIcon),
               color: ColorManager.primary,
             )),

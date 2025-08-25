@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,10 +20,7 @@ class SizeWidget extends StatelessWidget {
       backgroundColor:
           index == selectedIndex ? ColorManager.primary : Colors.transparent,
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 9.w,
-          vertical: 9.h
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 9.h),
         child: Text(
           '$sizeNumber',
           style: getMediumStyle(

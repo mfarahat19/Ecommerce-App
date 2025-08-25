@@ -1,14 +1,15 @@
-import 'package:ecommerce_app/core/resources/assets_manager.dart';
-import 'package:ecommerce_app/core/resources/color_manager.dart';
-import 'package:ecommerce_app/core/resources/styles_manager.dart';
-import 'package:ecommerce_app/core/widget/product_counter.dart';
+import 'package:ecommerce_app/core/components/product_counter.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductRating extends StatelessWidget {
   final String productBuyers;
   final String productRating;
-  const ProductRating({super.key , required this.productBuyers , required this.productRating});
+  const ProductRating(
+      {super.key, required this.productBuyers, required this.productRating});
 
   @override
   Widget build(BuildContext context) {
@@ -18,12 +19,10 @@ class ProductRating extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             border: Border.all(
-                color: ColorManager.primary.withOpacity(.3),
-                width: 1),
+                color: ColorManager.primary.withOpacity(.3), width: 1),
             borderRadius: BorderRadius.circular(20.r),
           ),
-          padding:
-          EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           child: Text(
             '$productBuyers Sold',
             overflow: TextOverflow.ellipsis,
@@ -45,8 +44,7 @@ class ProductRating extends StatelessWidget {
           child: Text(
             productRating,
             overflow: TextOverflow.ellipsis,
-            style:
-            getMediumStyle(color: ColorManager.appBarTitleColor)
+            style: getMediumStyle(color: ColorManager.appBarTitleColor)
                 .copyWith(fontSize: 14.sp),
           ),
         ),

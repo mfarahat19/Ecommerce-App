@@ -1,14 +1,13 @@
-import 'package:ecommerce_app/core/widget/custom_elevated_button.dart';
+import 'package:ecommerce_app/core/components/custom_elevated_button.dart';
+import 'package:ecommerce_app/core/components/main_text_field.dart';
+import 'package:ecommerce_app/core/components/validators.dart';
+import 'package:ecommerce_app/core/utils/assets_manager.dart';
+import 'package:ecommerce_app/core/utils/color_manager.dart';
+import 'package:ecommerce_app/core/utils/styles_manager.dart';
+import 'package:ecommerce_app/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/styles_manager.dart';
-import '../../../../core/resources/values_manager.dart';
-import '../../../../core/widget/main_text_field.dart';
-import '../../../../core/widget/validators.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
