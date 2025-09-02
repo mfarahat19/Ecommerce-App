@@ -5,11 +5,14 @@ import 'package:ecommerce_app/features/cart/screens/cart_screen.dart';
 import 'package:ecommerce_app/features/main_layout/main_layout.dart';
 import 'package:ecommerce_app/features/product_details/presentation/screen/product_details.dart';
 import 'package:ecommerce_app/features/products_screen/presentation/screens/products_screen.dart';
+import 'package:ecommerce_app/features/splash/presentation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splashRoute:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       case Routes.cartRoute:
         return MaterialPageRoute(builder: (_) => const CartScreen());
       case Routes.mainRoute:
