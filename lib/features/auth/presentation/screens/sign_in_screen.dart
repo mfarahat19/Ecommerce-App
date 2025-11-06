@@ -54,6 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
       child: BlocConsumer<AuthBloc, AuthLoginState>(
         listener: (context, state) {
+          print(state.requestState);
           if (state.requestState == RequestState.success) {
             Navigator.pushNamedAndRemoveUntil(
               context,
@@ -148,6 +149,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             textStyle: getBoldStyle(
                                 color: ColorManager.primary,
                                 fontSize: AppSize.s18),
+                            state: state.requestState,
                             onTap: () {
                               BlocProvider.of<AuthBloc>(context).add(LoginEvent(
                                   _emailController.text, _passController.text));

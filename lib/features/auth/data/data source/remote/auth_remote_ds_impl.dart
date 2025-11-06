@@ -2,9 +2,8 @@ import 'package:ecommerce_app/core/apis/api_manager.dart';
 import 'package:ecommerce_app/features/auth/data/data%20source/remote/auth_remote_ds.dart';
 import 'package:ecommerce_app/features/auth/domain/entity/user_entity.dart';
 
-class AuthRemoteDsImpl implements AuthRemoteDS {
+class AuthRemoteDsImpl implements AuthRemoteDs {
   final ApiManager apiManager;
-
   AuthRemoteDsImpl(this.apiManager);
 
   @override
@@ -14,7 +13,6 @@ class AuthRemoteDsImpl implements AuthRemoteDS {
 
   @override
   Future<bool> signUp(SignupEntity user) {
-    //call api
     // TODO: implement signUp
     throw UnimplementedError();
   }

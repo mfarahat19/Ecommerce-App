@@ -12,7 +12,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthLoginState> {
     );
     on<LoginEvent>(
       (event, emit) async {
-        state.copyWith(requestState: RequestState.loading);
+        emit(state.copyWith(requestState: RequestState.loading));
         bool loggedIn = await loginUseCase.call(event.email, event.password);
         if (loggedIn) {
           emit(state.copyWith(
