@@ -6,5 +6,3 @@ class LoginEvent extends AuthEvent {
 
   LoginEvent(this.email, this.password);
 }
-
-class SignupEvent extends AuthEvent {}

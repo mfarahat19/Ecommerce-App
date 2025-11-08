@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:ecommerce_app/config/routes_manager/route_generator.dart';
-import 'package:ecommerce_app/config/routes_manager/routes.dart';
 import 'package:ecommerce_app/core/utils/observer.dart';
 import 'package:ecommerce_app/di.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +20,9 @@ class MainApp extends StatelessWidget {
       designSize: const Size(430, 932),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        home: child,
-        onGenerateRoute: RouteGenerator.getRoute,
-        initialRoute: Routes.splashRoute,
+        routerConfig: RoutesManager.routers,
       ),
     );
   }

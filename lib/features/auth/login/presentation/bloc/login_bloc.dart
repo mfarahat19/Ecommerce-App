@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:ecommerce_app/core/utils/enums.dart';
-import 'package:ecommerce_app/features/auth/domain/use_cases/login_usecase.dart';
-import 'package:ecommerce_app/features/auth/presentation/bloc/auth_event.dart';
-import 'package:ecommerce_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:ecommerce_app/features/auth/login/domain/use_cases/login_usecase.dart';
+import 'package:ecommerce_app/features/auth/login/presentation/bloc/login_event.dart';
+import 'package:ecommerce_app/features/auth/login/presentation/bloc/login_state.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthLoginState> {
+class LoginBloc extends Bloc<AuthEvent, LoginState> {
   LoginUseCase loginUseCase;
-  AuthBloc(this.loginUseCase) : super(AuthLoginInit()) {
+  LoginBloc(this.loginUseCase) : super(LoginInit()) {
     on<AuthEvent>(
       (event, emit) {},
     );

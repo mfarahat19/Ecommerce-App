@@ -10,25 +10,26 @@ import 'package:ecommerce_app/core/utils/enums.dart';
 import 'package:ecommerce_app/core/utils/font_manager.dart';
 import 'package:ecommerce_app/core/utils/styles_manager.dart';
 import 'package:ecommerce_app/core/utils/values_manager.dart';
-import 'package:ecommerce_app/features/auth/data/data%20source/remote/auth_remote_ds_impl.dart';
-import 'package:ecommerce_app/features/auth/data/repo/auth_repo_impl.dart';
-import 'package:ecommerce_app/features/auth/domain/use_cases/login_usecase.dart';
-import 'package:ecommerce_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:ecommerce_app/features/auth/presentation/bloc/auth_event.dart';
-import 'package:ecommerce_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:ecommerce_app/features/auth/login/data/data_sources/remote/login_remote_ds_impl.dart';
+import 'package:ecommerce_app/features/auth/login/data/repositories/login_repo_impl.dart';
+import 'package:ecommerce_app/features/auth/login/domain/use_cases/login_usecase.dart';
+import 'package:ecommerce_app/features/auth/login/presentation/bloc/login_bloc.dart';
+import 'package:ecommerce_app/features/auth/login/presentation/bloc/login_event.dart';
+import 'package:ecommerce_app/features/auth/login/presentation/bloc/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
 
   final TextEditingController _passController = TextEditingController();
@@ -43,24 +44,20 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AuthBloc(
+      create: (context) => LoginBloc(
         LoginUseCase(
-          AuthRepoImpl(
+          LoginRepoImpl(
             AuthRemoteDsImpl(
               ApiManager(Dio()),
             ),
           ),
         ),
       ),
-      child: BlocConsumer<AuthBloc, AuthLoginState>(
+      child: BlocConsumer<LoginBloc, LoginState>(
         listener: (context, state) {
           print(state.requestState);
           if (state.requestState == RequestState.success) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              Routes.mainRoute,
-              (r) => false,
-            );
+            GoRouter.of(context).go(Routes.mainRoute);
           } else if (state.requestState == RequestState.error) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -151,8 +148,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                 fontSize: AppSize.s18),
                             state: state.requestState,
                             onTap: () {
-                              BlocProvider.of<AuthBloc>(context).add(LoginEvent(
-                                  _emailController.text, _passController.text));
+                              BlocProvider.of<LoginBloc>(context).add(
+                                  LoginEvent(_emailController.text,
+                                      _passController.text));
                             },
                           ),
                         ),
@@ -172,8 +170,8 @@ class _SignInScreenState extends State<SignInScreen> {
                             width: AppSize.s8.w,
                           ),
                           GestureDetector(
-                            onTap: () => Navigator.pushNamed(
-                                context, Routes.signUpRoute),
+                            onTap: () =>
+                                GoRouter.of(context).push(Routes.registerRoute),
                             child: Text(
                               'Create Account',
                               style: getSemiBoldStyle(color: ColorManager.white)

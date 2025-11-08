@@ -1,7 +1,7 @@
-import 'package:ecommerce_app/features/auth/domain/repo/auth_repo.dart';
+import 'package:ecommerce_app/features/auth/login/domain/repositories/login_repo.dart';
 
 class LoginUseCase {
-  AuthRepo authRepo;
+  LoginRepo authRepo;
   LoginUseCase(this.authRepo);
   Future<bool> call(String email, String password) =>
       authRepo.signIn(email, password);
